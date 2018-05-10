@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Goku extends Fighter implements FighterMoves {
-    private int multiplier = 1;
+    //private int multiplier = 1;
 
     public Goku(){
         //TEST
@@ -21,12 +21,12 @@ public class Goku extends Fighter implements FighterMoves {
 
     @Override
     public int normalAttack() {
-        return 50 * multiplier;
+        return 50;// * multiplier;
     }
 
     @Override
     public int strongAttack() {
-        return 125;
+        return 75;
         //add accuracy for the attack
     }
 
@@ -37,25 +37,9 @@ public class Goku extends Fighter implements FighterMoves {
 
     @Override
     public String specialAttack() {
-        multiplier = 2;
-        return "Attack Power Increased By 2x";
+        //multiplier = 2;
+        return "Attack Power Multiplied";
     }
 
-
-//    public String normalKaioken(){
-//        return "Strong Attack Is Twice As Strong";
-//    }
-//
-//    public int strongKamehameha(){
-//        return 75;
-//    }
-//
-//    public String defenseInstantTransmission(){
-//        return "Opposing Player Looses Turn";
-//    }
-//
-//    public int specialSpiritBomb(){
-//        return 125;
-//    }
 
 }

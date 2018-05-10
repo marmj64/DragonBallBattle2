@@ -28,6 +28,7 @@ public class BattleActivity extends AppCompatActivity {
     private int turnCounter;
     private int userDmgMulti = 1;
     private int oppDmgMulti = 1;
+    private int userStrong = 5, userDef = 3, userSpec = 1, oppStrong = 5, oppDef = 3, oppSpec = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,27 +60,34 @@ public class BattleActivity extends AppCompatActivity {
         userFighterView.setText(user.getName());
         userImage.setImageResource(user.getImageID());
         userHp.setText(String.valueOf(user.getHp()));
-        userNormalBtn.setText(user.getNormal());
-        userStrongBtn.setText(user.getStrong());
-        userDefenseBtn.setText(user.getDefense());
-        userSpecialBtn.setText(user.getSpecial());
 
         opponent = GuestActivity.selectedFighter;
         opponentFighterView.setText(opponent.getName());
         opponentImage.setImageResource(opponent.getImageID());
 
         opponentHp.setText(String.valueOf(opponent.getHp()));
-        opponentNormalBtn.setText(opponent.getNormal());
-        opponentStrongBtn.setText(opponent.getStrong());
-        opponentDefenseBtn.setText(opponent.getDefense());
-        opponentSpecialBtn.setText(opponent.getSpecial());
         opponentNormalBtn.setEnabled(false);
         opponentStrongBtn.setEnabled(false);
         opponentSpecialBtn.setEnabled(false);
         opponentDefenseBtn.setEnabled(false);
         //userImage.setImageResource(FighterSelectionActivity.);
 
+        setButtonTexts();
     }
+
+    private void setButtonTexts(){
+        opponentNormalBtn.setText(opponent.getNormal());
+        opponentStrongBtn.setText(opponent.getStrong() + "-" + oppStrong);
+        opponentDefenseBtn.setText(opponent.getDefense() + "-" + oppDef);
+        opponentSpecialBtn.setText(opponent.getSpecial() + "-" + oppSpec);
+
+        userNormalBtn.setText(user.getNormal());
+        userStrongBtn.setText(user.getStrong() + "-" + userStrong);
+        userDefenseBtn.setText(user.getDefense() + "-" + userDef);
+        userSpecialBtn.setText(user.getSpecial() + "-" + userSpec);
+
+    }
+
 //TODO CHECK VICTORY METHOD
     public void userNormal(View v){
         if(user instanceof Goku) {
@@ -96,6 +104,8 @@ public class BattleActivity extends AppCompatActivity {
             opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())- (x * userDmgMulti) + "");
             userDmgMulti = 1;
         }
+        userStrong--;
+        setButtonTexts();
         changeTurn();
     }
 
@@ -105,13 +115,18 @@ public class BattleActivity extends AppCompatActivity {
             oppDmgMulti = 0;
             Toast.makeText(this, s, Toast.LENGTH_LONG).show();
         }
+        userDef--;
+        setButtonTexts();
         changeTurn();
     }
 
     public void userSpecial(View v){
         if(user instanceof Goku) {
             String s = ((Goku) user).specialAttack();
+            userDmgMulti = 2;
         }
+        userSpec--;
+        setButtonTexts();
         changeTurn();
     }
 
@@ -130,15 +145,30 @@ public class BattleActivity extends AppCompatActivity {
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x*oppDmgMulti) + "");
             userDmgMulti = 1;
         }
+        oppStrong--;
+        setButtonTexts();
         changeTurn();
     }
 
     public void oppDefense(View v){
-
+        if(opponent instanceof Goku){
+            String s = ((Goku) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        }
+        oppDef--;
+        setButtonTexts();
+        changeTurn();
     }
 
     public void oppSpecial(View v){
-
+        if(opponent instanceof Goku) {
+            String s = ((Goku) opponent).specialAttack();
+            oppDmgMulti = 2;
+        }
+        oppSpec--;
+        setButtonTexts();
+        changeTurn();
     }
 
     private void changeTurn(){
@@ -162,6 +192,35 @@ public class BattleActivity extends AppCompatActivity {
             userStrongBtn.setEnabled(true);
             userDefenseBtn.setEnabled(true);
         }
+
+        if(oppStrong < 1){
+            opponentStrongBtn.setEnabled(false);
+        }
+
+        if(oppDef < 1){
+            opponentDefenseBtn.setEnabled(false);
+        }
+        if(oppSpec < 1){
+            opponentSpecialBtn.setEnabled(false);
+        }
+        if(userStrong < 1){
+            userStrongBtn.setEnabled(false);
+        }
+        if(userDef < 1){
+            userDefenseBtn.setEnabled(false);
+        }
+        if(userSpec < 1){
+            userSpecialBtn.setEnabled(false);
+        }
+        checkWin();
         turnCounter++;
+    }
+
+    private void checkWin(){
+        if(Integer.parseInt(userHp.getText().toString()) <= 0){
+            Toast.makeText(this, "Guest wins", Toast.LENGTH_LONG).show();
+        } else if(Integer.parseInt(opponentHp.getText().toString()) <= 0){
+            Toast.makeText(this, "User wins", Toast.LENGTH_LONG).show();
+        }
     }
 }
