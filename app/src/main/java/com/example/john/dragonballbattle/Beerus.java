@@ -18,12 +18,12 @@ public class Beerus extends Fighter implements FighterMoves {
 
     @Override
     public int normalAttack() {
-        return 50 ;
+        return 50;
     }
 
     @Override
     public int strongAttack() {
-        return 75;
+        return 100;
         //add accuracy for the attack
     }
 

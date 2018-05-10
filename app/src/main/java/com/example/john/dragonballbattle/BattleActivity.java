@@ -112,6 +112,110 @@ public class BattleActivity extends AppCompatActivity {
             opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
             userDmgMulti = 1;
         }
+        /*
+        Beerus
+         */
+        else if (user instanceof Beerus){
+            int x = ((Beerus) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Cell
+         */
+        else if (user instanceof Cell){
+            int x = ((Cell) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+         /*
+        Frieza
+         */
+        else if (user instanceof Frieza){
+            int x = ((Frieza) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Hit
+         */
+        else if (user instanceof Hit){
+            int x = ((Hit) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        KidBuu
+         */
+        else if (user instanceof KidBuu){
+            int x = ((KidBuu) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Krillin
+         */
+        else if (user instanceof Krillin){
+            int x = ((Krillin) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        MasterRoshi
+         */
+        else if (user instanceof MasterRoshi){
+            int x = ((MasterRoshi) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+         Monaka
+         */
+        else if (user instanceof Monaka){
+            int x = ((Monaka) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Piccolo
+         */
+        else if (user instanceof Piccolo){
+            int x = ((Piccolo) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Tien
+         */
+        else if (user instanceof Tien){
+            int x = ((Tien) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Trunks
+         */
+        else if (user instanceof Trunks){
+            int x = ((Trunks) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Vegeta
+         */
+        else if (user instanceof Vegeta){
+            int x = ((Vegeta) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Yamcha
+         */
+        else if (user instanceof Yamcha){
+            int x = ((Yamcha) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
         changeTurn();
     }
 
@@ -129,10 +233,114 @@ public class BattleActivity extends AppCompatActivity {
             userDmgMulti = 1;
         }
         /*
-        Goham
+        Gohan
          */
         else if (user instanceof Gohan){
             int x = ((Gohan) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Beerus
+         */
+        else if (user instanceof Beerus){
+            int x = ((Beerus) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Cell
+         */
+        else if (user instanceof Cell){
+            int x = ((Cell) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Frieza
+         */
+        else if (user instanceof Frieza){
+            int x = ((Frieza) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Hit
+         */
+        else if (user instanceof Hit){
+            int x = ((Hit) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        KidBuu
+         */
+        else if (user instanceof KidBuu){
+            int x = ((KidBuu) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Krillin
+         */
+        else if (user instanceof Krillin){
+            int x = ((Krillin) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        MasterRoshi
+         */
+        else if (user instanceof MasterRoshi){
+            int x = ((MasterRoshi) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Monaka
+         */
+        else if (user instanceof Monaka){
+            int x = ((Monaka) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Piccolo
+         */
+        else if (user instanceof Piccolo){
+            int x = ((Piccolo) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Tien
+         */
+        else if (user instanceof Tien){
+            int x = ((Tien) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Trunks
+         */
+        else if (user instanceof Trunks){
+            int x = ((Trunks) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Vegeta
+         */
+        else if (user instanceof Vegeta){
+            int x = ((Vegeta) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
+        /*
+        Yamcha
+         */
+        else if (user instanceof Yamcha){
+            int x = ((Yamcha) user).strongAttack();
             opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
             userDmgMulti = 1;
         }
@@ -149,6 +357,9 @@ public class BattleActivity extends AppCompatActivity {
     Goku
      */
     public void userDefense(View v){
+        /*
+        Goku
+         */
         if(user instanceof Goku){
             String s[] = ((Goku) user).defenseAttack();
             oppDmgMulti = 0;
@@ -171,6 +382,9 @@ public class BattleActivity extends AppCompatActivity {
      * User Special Method
      * @param v
      */
+    /*
+    Goku
+     */
     public void userSpecial(View v){
         if(user instanceof Goku) {
             String s[] = ((Goku) user).specialAttack();
@@ -180,6 +394,9 @@ public class BattleActivity extends AppCompatActivity {
             setButtonTexts();
             changeTurn();
         }
+        /*
+        Gohan
+         */
         else if(user instanceof Gohan){
             String s[] = ((Gohan) user).specialAttack();
             oppDmgMulti = 0;
@@ -199,16 +416,127 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppNormal(View v){
+        /*
+        Goku
+         */
         if(opponent instanceof Goku) {
             int x = ((Goku) opponent).normalAttack();
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
             oppDmgMulti = 1;
         }
+        /*
+        Gohan
+         */
         else if(opponent instanceof Gohan){
             int x = ((Gohan) opponent).normalAttack();
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
             oppDmgMulti = 1;
         }
+        /*
+        Beerus
+         */
+        else if(opponent instanceof Beerus){
+            int x = ((Beerus) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Cell
+         */
+        else if(opponent instanceof Cell){
+            int x = ((Cell) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Frieza
+         */
+        else if(opponent instanceof Frieza){
+            int x = ((Frieza) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Hit
+         */
+        else if(opponent instanceof Hit){
+            int x = ((Hit) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        KidBuu
+         */
+        else if(opponent instanceof KidBuu){
+            int x = ((KidBuu) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Krillin
+         */
+        else if(opponent instanceof Krillin){
+            int x = ((Krillin) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        MasterRoshi
+         */
+        else if(opponent instanceof MasterRoshi){
+            int x = ((MasterRoshi) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Monaka
+         */
+        else if(opponent instanceof Monaka){
+            int x = ((Monaka) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Piccolo
+         */
+        else if(opponent instanceof Piccolo){
+            int x = ((Piccolo) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+         Tien
+         */
+        else if(opponent instanceof Tien){
+            int x = ((Tien) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Trunks
+                */
+        else if(opponent instanceof Trunks){
+            int x = ((Trunks) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Vegeta
+         */
+        else if(opponent instanceof Vegeta){
+            int x = ((Vegeta) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Yamcha
+         */
+        else if(opponent instanceof Yamcha){
+            int x = ((Yamcha) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+
         changeTurn();
 
     }
@@ -220,11 +548,118 @@ public class BattleActivity extends AppCompatActivity {
     public void oppStrong(View v){
         if(opponent instanceof Goku) {
             int x = ((Goku) opponent).strongAttack();
-            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x*oppDmgMulti) + "");
-            userDmgMulti = 1;
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
         }
+        /*
+        Gohan
+         */
         else if(opponent instanceof Gohan){
             int x = ((Gohan) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Beerus
+         */
+        else if(opponent instanceof Beerus){
+            int x = ((Beerus) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Cell
+         */
+        else if(opponent instanceof Cell){
+            int x = ((Cell) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Frieza
+         */
+        else if(opponent instanceof Frieza){
+            int x = ((Frieza) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Hit
+         */
+        else if(opponent instanceof Hit){
+            int x = ((Hit) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        KidBuu
+         */
+        else if(opponent instanceof KidBuu){
+            int x = ((KidBuu) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Krillin
+         */
+        else if(opponent instanceof Krillin){
+            int x = ((Krillin) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        MasterRoshi
+         */
+        else if(opponent instanceof MasterRoshi){
+            int x = ((MasterRoshi) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Monaka
+         */
+        else if(opponent instanceof Monaka){
+            int x = ((Monaka) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Piccolo
+         */
+        else if(opponent instanceof Piccolo){
+            int x = ((Piccolo) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+         Tien
+         */
+        else if(opponent instanceof Tien){
+            int x = ((Tien) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Trunks
+                */
+        else if(opponent instanceof Trunks){
+            int x = ((Trunks) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Vegeta
+         */
+        else if(opponent instanceof Vegeta){
+            int x = ((Vegeta) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
+        /*
+        Yamcha
+         */
+        else if(opponent instanceof Yamcha){
+            int x = ((Yamcha) opponent).strongAttack();
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
             oppDmgMulti = 1;
         }
