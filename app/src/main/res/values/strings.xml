@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DragonBallBattle</string>
+    <string name="loginTitle">LOGIN</string>
+    <string name="loginUsernameLabel">User Name:</string>
+    <string name="loginPasswordLabel">Password:</string>
+    <string name="loginUsernameText">Enter User Name</string>
+    <string name="loginPasswordText">Enter Password</string>
+    <string name="loginLogin">LOGIN</string>
+    <string name="loginNewUser">Create New Account</string>
+    <string name="createAccountTitle">Create</string>
+    <string name="createAccountUserName">User Name</string>
+    <string name="createAccountPassword">Password</string>
+    <string name="createAccountPassword2">Validate Password</string>
+    <string name="createAccountButton">Create New Account</string>
+    <string name="fighterSelectionButton">Confirm Your Selection</string>
+    <string name="fighterSelectionTitle">Fighter Selection</string>
+    <string name="opponentSelectionTitle">Opponent Selection</string>
+    <string name="opponentSelectionLobbyView">Opponent Lobby</string>
+    <string name="opponentSelectionPlay">Play</string>
+    <string name="opponentSelectionGuest">Guest</string>
+
+</resources>

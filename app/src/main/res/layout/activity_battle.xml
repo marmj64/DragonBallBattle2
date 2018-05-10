@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.dragonballbattle.BattleActivity">
+
+
+    <ImageView
+        android:id="@+id/battleUserImage"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/battleUserName"
+        android:layout_marginStart="24dp"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/battleOpponentImage"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/battleUserImage"
+        android:layout_marginEnd="29dp"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/battleUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/battleUserImage"
+        android:layout_marginStart="17dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/battleUserHp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/battleUserImage"
+        android:layout_below="@+id/battleUserImage"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/battleOpponentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/battleOpponentImage"
+        android:layout_marginStart="20dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/battleOpponentHp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/battleOpponentImage"
+        android:layout_below="@+id/battleOpponentImage"
+        android:text="TextView" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:columnCount="2"
+        android:orientation="vertical"
+        android:rowCount="4">
+
+
+        <Button
+            android:id="@+id/battleUserNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="USER"
+            android:textSize="12sp"
+            android:onClick="userNormal"/>
+
+        <Button
+            android:id="@+id/battleUserStrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="USER"
+            android:textSize="12sp"
+            android:onClick="userStrong"/>
+
+        <Button
+            android:id="@+id/battleUserDefense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="USER"
+            android:textSize="12sp"
+            android:onClick="userDefense"/>
+
+        <Button
+            android:id="@+id/battleUserSpecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="USER"
+            android:textSize="12sp"
+            android:onClick="userSpecial"/>
+
+        <Button
+            android:id="@+id/battleOpponentNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="OPP"
+            android:textSize="12sp"
+            android:onClick="oppNormal"/>
+
+        <Button
+            android:id="@+id/battleOpponentStrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="OPP"
+            android:textSize="12sp"
+            android:onClick="oppStrong"/>
+
+        <Button
+            android:id="@+id/battleOpponentDefense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="OPP"
+            android:textSize="12sp"
+            android:onClick="oppDefense"/>
+
+        <Button
+            android:id="@+id/battleOpponentSpecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_rowWeight="1"
+            android:text="OPP"
+            android:textSize="12sp"
+            android:onClick="oppSpecial"/>
+    </GridLayout>
+</RelativeLayout>

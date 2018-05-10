@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.dragonballbattle.OpponentSelectionActivity">
+
+    <TextView
+        android:id="@+id/opponentSelectionTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/opponentSelectionTitle" />
+
+    <Button
+        android:id="@+id/opponentSelectionPlayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toStartOf="@+id/opponentSelectionLobbyView"
+        android:text="@string/opponentSelectionPlay"
+        android:onClick="playGame"/>
+
+    <Button
+        android:id="@+id/opponentSelectionGuestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/opponentSelectionPlayButton"
+        android:layout_alignBottom="@+id/opponentSelectionPlayButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="28dp"
+        android:text="@string/opponentSelectionGuest"
+        android:onClick="guestSelection"/>
+
+    <TextView
+        android:id="@+id/opponentSelectionLobbyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/opponentSelectionTitleText"
+        android:layout_below="@+id/opponentSelectionTitleText"
+        android:layout_marginTop="94dp"
+        android:text="@string/opponentSelectionLobbyView" />
+</RelativeLayout>

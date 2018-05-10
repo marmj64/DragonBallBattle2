@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.dragonballbattle.CreateAccountActivity">
+
+    <TextView
+        android:id="@+id/createAccountUNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/createAccountTitle"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_toStartOf="@+id/createAccountButton"
+        android:text="@string/createAccountUserName" />
+
+    <TextView
+        android:id="@+id/createAccountTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/createAccountTitle" />
+
+    <TextView
+        android:id="@+id/createAccountPasswordLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/createAccountUNameLabel"
+        android:layout_below="@+id/createAccountUsernameText"
+        android:layout_marginTop="62dp"
+        android:text="@string/createAccountPassword" />
+
+    <TextView
+        android:id="@+id/createAccountPassword2Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/createAccountPassword2Text"
+        android:layout_alignBottom="@+id/createAccountPassword2Text"
+        android:layout_alignStart="@+id/createAccountPasswordLabel"
+        android:text="@string/createAccountPassword2" />
+
+    <EditText
+        android:id="@+id/createAccountUsernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/createAccountUNameLabel"
+        android:layout_alignBottom="@+id/createAccountUNameLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/createAccountPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/createAccountPasswordLabel"
+        android:layout_alignBottom="@+id/createAccountPasswordLabel"
+        android:layout_alignStart="@+id/createAccountUsernameText"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/createAccountPassword2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/createAccountPasswordText"
+        android:layout_below="@+id/createAccountPasswordText"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/createAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:text="@string/createAccountButton"
+        android:onClick="createUser"/>
+</RelativeLayout>
