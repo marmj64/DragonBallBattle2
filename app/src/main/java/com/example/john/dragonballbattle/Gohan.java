@@ -9,7 +9,7 @@ public class Gohan extends Fighter implements FighterMoves {
 
     public Gohan(){
         //TEST
-        super("Gohan", 200, "Masenko", "Super Kamehameha", "Counter", "Father-Son Kamehameha",R.drawable.gohan);
+        super("Gohan", 300, "Masenko", "Super Kamehameha", "Counter", "Hidden Power",R.drawable.gohan);
     }
 
     // @Override
@@ -24,17 +24,22 @@ public class Gohan extends Fighter implements FighterMoves {
 
     @Override
     public int strongAttack() {
-        return 75;
+        return 100;
         //add accuracy for the attack
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn and 25 Health Points";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Attack Misses";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses 150 HP And Is Stunned for a Turn";
+        array[1] = "150";
+        return array;
     }
 }

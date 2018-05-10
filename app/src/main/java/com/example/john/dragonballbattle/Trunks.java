@@ -8,7 +8,7 @@ public class Trunks extends Fighter implements FighterMoves {
 
     public Trunks(){
         //TEST
-        super("Trunks", 200, "Gallick Gun", "Masenko", "Shining Sword Attack", "Burning Attack",R.drawable.trunks);
+        super("Trunks", 300, "Gallick Gun", "Masenko", "Shining Sword Attack", "Burning Attack",R.drawable.trunks);
     }
 
     // @Override
@@ -28,12 +28,19 @@ public class Trunks extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn"+"\nOpposing Player Loses 50 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses Turn"+"\nOpposing Player Loses 50 HP";
+        array[1] = "50";
+        return array;
+
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Loses 150 HP";
+        array[1] = "150";
+        return array;
     }
 }

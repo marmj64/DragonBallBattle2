@@ -8,7 +8,7 @@ public class KidBuu extends Fighter implements FighterMoves {
 
     public KidBuu(){
         //TEST
-        super("KidBuu", 200, "Shocking Ball", "Planet Burst", "Regeneration", "Absorption",R.drawable.kidbuu);
+        super("KidBuu", 300, "Shocking Ball", "Planet Burst", "Absorption", "Regenerate",R.drawable.kidbuu);
     }
 
     // @Override
@@ -28,12 +28,19 @@ public class KidBuu extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Regenerate 50 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses 100 HP"+"\n"+"Buu Regenerates 50 HP";
+        array[1] = "100";
+        array[2] = "50";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 25 HP. Buu Gains 25 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Buu Regenerates To Max Health";
+        array[1] = "300";
+        return array;
     }
 }

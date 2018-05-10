@@ -29,12 +29,17 @@ public class Yamcha extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn";
-    }
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Next Attacks Misses";
+        return array;
 
+    }
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 75 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses 100 HP";
+        array[1] = "100";
+        return array;
     }
 }

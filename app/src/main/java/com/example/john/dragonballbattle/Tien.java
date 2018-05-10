@@ -9,7 +9,7 @@ public class Tien extends Fighter implements FighterMoves {
 
     public Tien(){
         //TEST
-        super("Tien", 200, "Four Witches ", "Multi Form", "Solar Flare", "Tri Beam",R.drawable.tien);
+        super("Tien", 300, "Four Witches ", "Multi Form", "Solar Flare", "Tri Beam",R.drawable.tien);
     }
 
     // @Override
@@ -29,12 +29,18 @@ public class Tien extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Next Attack Misses";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP"+"\nTien Loses 50 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses 175 HP"+"\n"+"Tien Loses 50 HP";
+        array[1] = "175";
+        array[2] = "50";
+        return array;
     }
 }

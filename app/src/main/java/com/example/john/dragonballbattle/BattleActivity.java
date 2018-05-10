@@ -89,19 +89,51 @@ public class BattleActivity extends AppCompatActivity {
     }
 
 //TODO CHECK VICTORY METHOD
+
+    /**
+     * User Normal Method
+     * @param v
+     */
+
+    /*
+    Goku.
+     */
     public void userNormal(View v){
         if(user instanceof Goku) {
             int x = ((Goku) user).normalAttack();
             opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
             userDmgMulti = 1;
         }
+        /*
+        Gohan.
+         */
+        else if (user instanceof Gohan){
+            int x = ((Gohan) user).normalAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
+            userDmgMulti = 1;
+        }
         changeTurn();
     }
 
+    /**
+     * User Strong Method
+     * @param v
+     */
     public void userStrong(View v){
+        /*
+        Goku
+         */
         if(user instanceof Goku) {
             int x = ((Goku) user).strongAttack();
             opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())- (x * userDmgMulti) + "");
+            userDmgMulti = 1;
+        }
+        /*
+        Goham
+         */
+        else if (user instanceof Gohan){
+            int x = ((Gohan) user).strongAttack();
+            opponentHp.setText(Integer.parseInt(opponentHp.getText().toString())-(x * userDmgMulti)+ "");
             userDmgMulti = 1;
         }
         userStrong--;
@@ -109,66 +141,190 @@ public class BattleActivity extends AppCompatActivity {
         changeTurn();
     }
 
+    /**
+     * User Defense Method
+     * @param v
+     */
+    /*
+    Goku
+     */
     public void userDefense(View v){
         if(user instanceof Goku){
-            String s = ((Goku) user).defenseAttack();
+            String s[] = ((Goku) user).defenseAttack();
             oppDmgMulti = 0;
-            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
+        }
+        /*
+        Gohan
+         */
+        else if(user instanceof Gohan){
+            String s[] = ((Gohan) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
         }
         userDef--;
         setButtonTexts();
-        changeTurn();
+        changeTurnNoNormalUser();
     }
 
+    /**
+     * User Special Method
+     * @param v
+     */
     public void userSpecial(View v){
         if(user instanceof Goku) {
-            String s = ((Goku) user).specialAttack();
+            String s[] = ((Goku) user).specialAttack();
             userDmgMulti = 2;
+            Toast.makeText(this,s[0],Toast.LENGTH_LONG).show();
+            userSpec--;
+            setButtonTexts();
+            changeTurn();
         }
-        userSpec--;
-        setButtonTexts();
-        changeTurn();
+        else if(user instanceof Gohan){
+            String s[] = ((Gohan) user).specialAttack();
+            oppDmgMulti = 0;
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText(x-y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
+            userSpec--;
+            setButtonTexts();
+            changeTurnNoNormalUser();
+        }
+
     }
 
+    /**
+     * Opp Normal Method
+     * @param v
+     */
     public void oppNormal(View v){
         if(opponent instanceof Goku) {
             int x = ((Goku) opponent).normalAttack();
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
             oppDmgMulti = 1;
         }
+        else if(opponent instanceof Gohan){
+            int x = ((Gohan) opponent).normalAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
         changeTurn();
+
     }
 
+    /**
+     * Opp Strong Method
+     * @param v
+     */
     public void oppStrong(View v){
         if(opponent instanceof Goku) {
             int x = ((Goku) opponent).strongAttack();
             userHp.setText(Integer.parseInt(userHp.getText().toString())-(x*oppDmgMulti) + "");
             userDmgMulti = 1;
         }
+        else if(opponent instanceof Gohan){
+            int x = ((Gohan) opponent).strongAttack();
+            userHp.setText(Integer.parseInt(userHp.getText().toString())-(x * oppDmgMulti)+ "");
+            oppDmgMulti = 1;
+        }
         oppStrong--;
         setButtonTexts();
         changeTurn();
     }
 
+    /**
+     * Opp Defense Method
+     * @param v
+     */
     public void oppDefense(View v){
         if(opponent instanceof Goku){
-            String s = ((Goku) opponent).defenseAttack();
+            String s[] = ((Goku) opponent).defenseAttack();
             userDmgMulti = 0;
-            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
+        }
+        else if(opponent instanceof Gohan){
+            String s[] = ((Gohan) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
         }
         oppDef--;
         setButtonTexts();
-        changeTurn();
+        changeTurnNoNormalOpp();
     }
 
+    /**
+     * Opp Special Method
+     * @param v
+     */
     public void oppSpecial(View v){
         if(opponent instanceof Goku) {
-            String s = ((Goku) opponent).specialAttack();
+            String s[] = ((Goku) opponent).specialAttack();
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
             oppDmgMulti = 2;
+            oppSpec--;
+            setButtonTexts();
+            changeTurn();
         }
-        oppSpec--;
-        setButtonTexts();
-        changeTurn();
+        else if(opponent instanceof Gohan){
+            String s[] = ((Gohan) opponent).specialAttack();
+            userDmgMulti = 0;
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            userHp.setText(x-y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_LONG).show();
+            oppSpec--;
+            setButtonTexts();
+            changeTurnNoNormalOpp();
+        }
+
+    }
+
+    private void changeTurnNoNormalUser(){
+        if(turnCounter % 2 == 0){
+            //currently user's turn
+            userNormalBtn.setEnabled(false);
+            userSpecialBtn.setEnabled(false);
+            userStrongBtn.setEnabled(false);
+            userDefenseBtn.setEnabled(false);
+            opponentNormalBtn.setEnabled(false);
+            opponentStrongBtn.setEnabled(true);
+            opponentSpecialBtn.setEnabled(true);
+            opponentDefenseBtn.setEnabled(true);
+        } else {
+            opponentNormalBtn.setEnabled(false);
+            opponentStrongBtn.setEnabled(false);
+            opponentSpecialBtn.setEnabled(false);
+            opponentDefenseBtn.setEnabled(false);
+            userNormalBtn.setEnabled(true);
+            userSpecialBtn.setEnabled(true);
+            userStrongBtn.setEnabled(true);
+            userDefenseBtn.setEnabled(true);
+        }
+        turnCounter++;
+    }
+    private void changeTurnNoNormalOpp(){
+        if(turnCounter % 2 == 0){
+            //currently user's turn
+            userNormalBtn.setEnabled(false);
+            userSpecialBtn.setEnabled(false);
+            userStrongBtn.setEnabled(false);
+            userDefenseBtn.setEnabled(false);
+            opponentNormalBtn.setEnabled(true);
+            opponentStrongBtn.setEnabled(true);
+            opponentSpecialBtn.setEnabled(true);
+            opponentDefenseBtn.setEnabled(true);
+        } else {
+            opponentNormalBtn.setEnabled(false);
+            opponentStrongBtn.setEnabled(false);
+            opponentSpecialBtn.setEnabled(false);
+            opponentDefenseBtn.setEnabled(false);
+            userNormalBtn.setEnabled(false);
+            userSpecialBtn.setEnabled(true);
+            userStrongBtn.setEnabled(true);
+            userDefenseBtn.setEnabled(true);
+        }
+        turnCounter++;
     }
 
     private void changeTurn(){
@@ -192,6 +348,9 @@ public class BattleActivity extends AppCompatActivity {
             userStrongBtn.setEnabled(true);
             userDefenseBtn.setEnabled(true);
         }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+
 
         if(oppStrong < 1){
             opponentStrongBtn.setEnabled(false);

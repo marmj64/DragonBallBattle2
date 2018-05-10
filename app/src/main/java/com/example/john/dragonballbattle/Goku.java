@@ -11,7 +11,7 @@ public class Goku extends Fighter implements FighterMoves {
 
     public Goku(){
         //TEST
-        super("Goku", 200, "Kamehameha", "Spirit Bomb", "Instant Transmission", "Kaioken", R.drawable.goku);
+        super("Goku", 300, "Kamehameha", "Spirit Bomb", "Instant Transmission", "Kaioken", R.drawable.goku);
     }
 
    // @Override
@@ -21,24 +21,29 @@ public class Goku extends Fighter implements FighterMoves {
 
     @Override
     public int normalAttack() {
-        return 50;// * multiplier;
+        return 75;// * multiplier;
     }
 
     @Override
     public int strongAttack() {
-        return 75;
+        return 100;
         //add accuracy for the attack
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Fighter's Next Move Will Not Hit";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0]= "Opposing Fighter's Next Move Will Not Hit";
+        array[1]= "0";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        //multiplier = 2;
-        return "Attack Power Multiplied";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0]= "Attack Power Multiplied";
+        array[1]= "2";
+        return array;
     }
 
 

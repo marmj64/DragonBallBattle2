@@ -9,7 +9,7 @@ public class Monaka extends Fighter implements FighterMoves {
 
     public Monaka(){
         //TEST
-        super("Monaka", 200, "Scared Punch", "Scared Kick", "Run Away", "Delivery Special",R.drawable.monaka);
+        super("Monaka", 300, "Scared Punch", "Scared Kick", "Run Away", "Delivery Special",R.drawable.monaka);
     }
 
     // @Override
@@ -29,12 +29,19 @@ public class Monaka extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses Turn";
+
+        return array;
     }
 
+
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 75 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses 100 HP";
+        array[1] = "100";
+        return array;
     }
 }

@@ -9,7 +9,7 @@ public class Vegeta extends Fighter implements FighterMoves {
 
     public Vegeta(){
             //TEST
-            super("Vegeta", 200, "Gallick Gun", "Big Bang Attack", "Final Explosion", "Final Flash",R.drawable.vegeta);
+            super("Vegeta", 300, "Gallick Gun", "Big Bang Attack", "Final Flash", "Final Explosion",R.drawable.vegeta);
         }
 
         // @Override
@@ -29,12 +29,20 @@ public class Vegeta extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opponent Loses 125 HP"+"\nVegeta Loses 100 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses 100";
+        array[1] = "100";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses 200"+"\nVegeta Loses 150 HP";
+        array[1] = "200";
+        array[2] = "150";
+        return array;
+
     }
 }

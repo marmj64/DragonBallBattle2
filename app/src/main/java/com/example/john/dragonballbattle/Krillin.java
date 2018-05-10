@@ -8,7 +8,7 @@ public class Krillin extends Fighter implements FighterMoves {
 
     public Krillin(){
         //TEST
-        super("Krillin", 200, "Kamehameha", "Destructo Disk", "Solar Flare", "Scattering Bullet",R.drawable.krillin);
+        super("Krillin", 300, "Kamehameha", "Destructo Disk", "Solar Flare", "Scattering Bullet",R.drawable.krillin);
     }
 
     // @Override
@@ -28,12 +28,17 @@ public class Krillin extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses Turn";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opponent Loses 100 HP";
+        array[1] = "150";
+        return array;
     }
 }

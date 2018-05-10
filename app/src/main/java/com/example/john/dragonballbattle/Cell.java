@@ -7,7 +7,7 @@ package com.example.john.dragonballbattle;
 public class Cell extends Fighter implements FighterMoves {
 
     public Cell(){
-        super("Cell", 200, "Death Beam", "Super Kamehameha", "Instant Transmission", "Self Destruction",R.drawable.cell);
+        super("Cell", 300, "Death Beam", "Super Kamehameha", "Instant Transmission", "Self Destruction",R.drawable.cell);
     }
 
     // @Override
@@ -25,12 +25,19 @@ public class Cell extends Fighter implements FighterMoves {
         return 75;
     }
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0]= "Opponents Health Is Cut In Half";
+        array[1]= "0";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Cell Loses Half Health. Opponent Lose 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Cell Loses Half HP." + "\n" + "Opponent Loses 200 HP";
+        array[1] = "200";
+        array[2] = "2";
+        return array;
     }
 }

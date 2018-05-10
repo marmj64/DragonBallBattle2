@@ -9,7 +9,7 @@ public class Hit extends Fighter implements FighterMoves {
 
     public Hit(){
         //TEST
-        super("Hit", 200, "Vital Point Attack", "Flash Fist Crush ", "Time Skip", "Improve",R.drawable.hit);
+        super("Hit", 300, "Vital Point Attack", "Flash Fist Crush ", "Time Skip", "Improve",R.drawable.hit);
     }
 
     // @Override
@@ -29,13 +29,19 @@ public class Hit extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn and 50 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Next Attack Misses";
+        array[1] = "50";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        improve = improve + 20;
-        return "Hit's Attacks Do 20 More Damage Points";
+    public String[] specialAttack() {
+
+        String array[] = new String[2];
+        array[0] = "Hit's Attacks Do 100 More Damage";
+        improve = 100;
+        return array;
     }
 }

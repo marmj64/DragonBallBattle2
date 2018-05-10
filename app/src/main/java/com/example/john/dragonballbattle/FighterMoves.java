@@ -12,8 +12,8 @@ public interface FighterMoves {
 
      int strongAttack();
 
-     String defenseAttack();
+     String [] defenseAttack();
 
-     String specialAttack();
+     String [] specialAttack();
 
 }

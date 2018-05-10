@@ -5,10 +5,9 @@ package com.example.john.dragonballbattle;
  */
 
 public class MasterRoshi extends Fighter implements FighterMoves {
-    private int maxPower = 0;
 
-    public MasterRoshi(){
-        super("Master Roshi", 200, "Drunken Fist", "Kamehameha", "Mafuba", "Max Power",R.drawable.roshi);
+    public MasterRoshi() {
+        super("Master Roshi", 300, "Kamehameha", "Max Power Kamehameha", "Drunken Roshi", "Mafuba", R.drawable.roshi);
     }
 
     // @Override
@@ -18,23 +17,27 @@ public class MasterRoshi extends Fighter implements FighterMoves {
 
     @Override
     public int normalAttack() {
-        return 50 + maxPower;
+        return 75;
     }
 
     @Override
     public int strongAttack() {
-        return 75 + maxPower;
-        //add accuracy for the attack
+        return 100;
     }
 
     @Override
-    public String defenseAttack() {
-        return "Opposing Player Looses Turn"+"\nOpposing Player Loses 50 HP"+"\nMaster Roshi Loses 75 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses Turn";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        maxPower = 25;
-        return "Opponent Attack does";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses Turn" + "\nOpposing Player Loses 150 HP" + "\nMaster Roshi Loses 100 HP";
+        array[1] = "100";
+        array[2] = "50";
+        return array;
     }
 }

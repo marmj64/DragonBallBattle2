@@ -9,7 +9,7 @@ public class Piccolo extends Fighter implements FighterMoves {
 
     public Piccolo(){
         //TEST
-        super("Piccolo", 200, "Demon Hand", "Special Beam Cannon", "Regeneration", "Hellzone Grenade",R.drawable.piccolo);
+        super("Piccolo", 300, "Demon Hand", "Special Beam Cannon", "Regeneration", "Hellzone Grenade",R.drawable.piccolo);
     }
 
     // @Override
@@ -29,12 +29,18 @@ public class Piccolo extends Fighter implements FighterMoves {
     }
 
     @Override
-    public String defenseAttack() {
-        return "Piccolo Recovers 50 HP";
+    public String[] defenseAttack() {
+        String array[] = new String[2];
+        array[0] = "Piccolo Regenerates 100 HP";
+        array[1] = "100";
+        return array;
     }
 
     @Override
-    public String specialAttack() {
-        return "Opponent Loses 100 HP";
+    public String[] specialAttack() {
+        String array[] = new String[2];
+        array[0] = "Opposing Player Looses 150 HP";
+        array[1] = "150";
+        return array;
     }
 }
