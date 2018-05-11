@@ -7,7 +7,7 @@ package com.example.john.dragonballbattle;
 public class Frieza extends Fighter implements FighterMoves {
     private int fullPower = 0;
     public Frieza(){
-        super("Frieza", 300, "Death Beam", "Death Ball", "100% Power", "Death Saucer",R.drawable.frieza);
+        super("Frieza", 300, "Death Beam", "Death Ball", "Upgrade Form", "Death Saucer",R.drawable.frieza);
     }
     public static String getFighterName() {
         return null;
@@ -27,9 +27,8 @@ public class Frieza extends Fighter implements FighterMoves {
     @Override
     public String[] defenseAttack() {
         String array[] = new String[2];
-        array[0] = "Maximum Power Reached. Attacks Do 100 More HP";
-        array[1] = "100";
-        fullPower = 100;
+        array[0] = "Form Upgraded. Attacks Do More Damage";
+        fullPower = fullPower + 50;
         return array;
     }
 

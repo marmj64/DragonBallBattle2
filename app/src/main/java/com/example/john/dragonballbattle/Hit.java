@@ -31,16 +31,15 @@ public class Hit extends Fighter implements FighterMoves {
     @Override
     public String[] defenseAttack() {
         String array[] = new String[2];
-        array[0] = "Opposing Player Next Attack Misses";
+        array[0] = "Opposing Player Next Attack Misses. Hit Does 50 Damage";
         array[1] = "50";
         return array;
     }
 
     @Override
     public String[] specialAttack() {
-
         String array[] = new String[2];
-        array[0] = "Hit's Attacks Do 100 More Damage";
+        array[0] = "Hit Has Improved. His Attacks Do 100 More Damage";
         improve = 100;
         return array;
     }

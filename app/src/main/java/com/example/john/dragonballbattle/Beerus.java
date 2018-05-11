@@ -8,8 +8,8 @@ public class Beerus extends Fighter implements FighterMoves {
 
 
     public Beerus(){
-        super("Beerus", 300, "Pressure Point Attack", "Wrath of Destruction", "Energy Nullification", "Hakai", R.drawable.beerus);
-    }
+        super("Beerus", 300, "Palm Energy Explosion", "Wrath of Hakai-Shinto", "Pressure Point Attack", "Hakai", R.drawable.beerus);
+}
 
     // @Override
     public static String getFighterName() {
@@ -18,7 +18,7 @@ public class Beerus extends Fighter implements FighterMoves {
 
     @Override
     public int normalAttack() {
-        return 50;
+        return 75;
     }
 
     @Override
@@ -30,15 +30,15 @@ public class Beerus extends Fighter implements FighterMoves {
     @Override
     public String[] defenseAttack() {
         String array[] = new String[2];
-        array[0]= "Opposing Player Next Attack Misses";
-        array[1]= "0";
+        array[0]= "Opponent Knocked Out"+"\n"+"Opponent Loses 50 HP";
+        array[1]= "50";
         return array;
     }
 
     @Override
     public String[] specialAttack() {
         String array[] = new String[2];
-        array[0]= "Opponents Health Is Cut In Half";
+        array[0]= "Opponents Health Is Cut In Half"+"\n"+"Opponent Is Weakened";
         array[1]= "2";
         return array;
     }

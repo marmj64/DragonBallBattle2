@@ -29,7 +29,7 @@ public class KidBuu extends Fighter implements FighterMoves {
 
     @Override
     public String[] defenseAttack() {
-        String array[] = new String[2];
+        String array[] = new String[3];
         array[0] = "Opponent Loses 100 HP"+"\n"+"Buu Regenerates 50 HP";
         array[1] = "100";
         array[2] = "50";
@@ -38,7 +38,7 @@ public class KidBuu extends Fighter implements FighterMoves {
 
     @Override
     public String[] specialAttack() {
-        String array[] = new String[2];
+        String array[] = new String[3];
         array[0] = "Buu Regenerates To Max Health";
         array[1] = "300";
         return array;

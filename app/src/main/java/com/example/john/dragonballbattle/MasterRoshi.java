@@ -36,8 +36,8 @@ public class MasterRoshi extends Fighter implements FighterMoves {
     public String[] specialAttack() {
         String array[] = new String[2];
         array[0] = "Opposing Player Looses Turn" + "\nOpposing Player Loses 150 HP" + "\nMaster Roshi Loses 100 HP";
-        array[1] = "100";
-        array[2] = "50";
+        array[1] = "150";
+        array[2] = "100";
         return array;
     }
 }
