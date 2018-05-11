@@ -38,7 +38,7 @@ public class Krillin extends Fighter implements FighterMoves {
     public String[] specialAttack() {
         String array[] = new String[2];
         array[0] = "Opponent Loses 100 HP";
-        array[1] = "150";
+        array[1] = "100";
         return array;
     }
 }

@@ -384,9 +384,135 @@ public class BattleActivity extends AppCompatActivity {
             oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
+        /*
+        Beerus
+         */
+        else if(user instanceof Beerus){
+            String s[] = ((Beerus) user).defenseAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText(x-(y*userDmgMulti) + "");
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Cell
+         */
+        else if(user instanceof Cell){
+            String s[] = ((Cell) user).defenseAttack();
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            userHp.setText(x+y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Frieza
+         */
+        else if(user instanceof Frieza){
+            String s[] = ((Frieza) user).defenseAttack();
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Hit
+         */
+        else if(user instanceof Hit){
+            String s[] = ((Hit) user).defenseAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText(x-y + "");
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        KidBuu
+         */
+        else if(user instanceof KidBuu){
+            String s[] = ((KidBuu) user).defenseAttack();
+            int w = Integer.parseInt(userHp.getText().toString());//user health
+            int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            int z = Integer.parseInt(s[2]);//health regen
+            opponentHp.setText(x-y + "");
+            userHp.setText((w+z +""));
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Krillin
+         */
+        else if(user instanceof Krillin){
+            String s[] = ((Krillin) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        MasterRoshi
+         */
+        else if(user instanceof MasterRoshi){
+            String s[] = ((MasterRoshi) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Monaka
+         */
+        else if(user instanceof Monaka){
+            String s[] = ((Monaka) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Piccolo
+         */
+        else if(user instanceof Piccolo){
+            String s[] = ((Piccolo) user).defenseAttack();
+            int w = Integer.parseInt(userHp.getText().toString());//user health
+            int z = Integer.parseInt(s[1]);//health regen
+            userHp.setText((w+z +""));
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Tien
+         */
+        else if(user instanceof Tien){
+            String s[] = ((Tien) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Trunks
+         */
+        else if(user instanceof Trunks){
+            String s[] = ((Trunks) user).defenseAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            opponentHp.setText(x-y + "");
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Vegeta
+         */
+        else if(user instanceof Vegeta){
+            String s[] = ((Vegeta) user).defenseAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            opponentHp.setText(x-y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Yamcha
+         */
+        else if(user instanceof Yamcha){
+            String s[] = ((Yamcha) user).defenseAttack();
+            oppDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
         userDef--;
         setButtonTexts();
         changeTurn();
+
     }
 
     /**
@@ -413,6 +539,159 @@ public class BattleActivity extends AppCompatActivity {
             opponentHp.setText(x-y + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
+        /*
+        Beerus
+         */
+        else if(user instanceof Beerus) {
+            String s[] = ((Beerus) user).specialAttack();
+            oppDmgMulti = 0;
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            if (userDmgMulti != 0) {
+                opponentHp.setText(x / y + "");
+            }
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+
+        }
+        /*
+        Cell
+         */
+        else if(user instanceof Cell){
+            String s[] = ((Cell) user).specialAttack();
+            int w = Integer.parseInt(userHp.getText().toString());//cell hp
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//cell loses half hp
+            int z = Integer.parseInt(s[2]);//opp loses 150
+            userHp.setText(w/y +"");
+            opponentHp.setText((x-z) +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Frieza
+         */
+        else if(user instanceof Frieza){
+            String s[] = ((Frieza) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText( x-y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Hit
+         */
+        else if(user instanceof Hit){
+            String s[] = ((Hit) user).specialAttack();
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        KidBuu
+         */
+        else if(user instanceof KidBuu){
+            String s[] = ((KidBuu) user).specialAttack();
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText( y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Krillin
+         */
+        else if(user instanceof Krillin){
+            String s[] = ((Krillin) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText( x-y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        MasterRoshi
+         */
+        else if(user instanceof MasterRoshi){
+            String s[] = ((MasterRoshi) user).specialAttack();
+            int w = Integer.parseInt(userHp.getText().toString());//roshi hp
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            int z = Integer.parseInt(s[2]);//100
+            userHp.setText(w-z +"");
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Monaka
+         */
+        else if(user instanceof Monaka){
+            String s[] = ((Monaka) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Monaka
+         */
+        else if(user instanceof Monaka){
+            String s[] = ((Monaka) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Piccolo
+         */
+        else if(user instanceof Piccolo){
+            String s[] = ((Piccolo) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Tien
+         */
+        else if(user instanceof Tien){
+            String s[] = ((Tien) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//175
+            int a = Integer.parseInt(userHp.getText().toString());//tien hp
+            int b = Integer.parseInt(s[2]);//50
+            userHp.setText(a-b +"");
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Trunks
+         */
+        else if(user instanceof Trunks){
+            String s[] = ((Trunks) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Vegeta
+         */
+        else if(user instanceof Vegeta){
+            String s[] = ((Vegeta) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            int a = Integer.parseInt(userHp.getText().toString());//vegeta hp
+            int b = Integer.parseInt(s[2]);//100
+            userHp.setText(a-b +"");
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Yamcha
+         */
+        else if(user instanceof Yamcha){
+            String s[] = ((Yamcha) user).specialAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            opponentHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+
         userSpec--;
         setButtonTexts();
         changeTurn();
@@ -686,16 +965,149 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppDefense(View v){
+        /*
+        Goku
+         */
         if(opponent instanceof Goku){
             String s[] = ((Goku) opponent).defenseAttack();
             userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
+        /*
+        Gohan
+         */
         else if(opponent instanceof Gohan){
             String s[] = ((Gohan) opponent).defenseAttack();
             userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
+        /*
+        Beerus
+         */
+        else if(opponent instanceof Beerus){
+            String s[] = ((Beerus) opponent).defenseAttack();
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+
+            userHp.setText(x-(y*oppDmgMulti) + "");
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Cell
+         */
+        else if(opponent instanceof Cell){
+            String s[] = ((Cell) opponent).defenseAttack();
+            int x = Integer.parseInt(opponentHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            opponentHp.setText(x+y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Frieza
+         */
+        else if(opponent instanceof Frieza){
+            String s[] = ((Frieza) opponent).defenseAttack();
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Hit
+         */
+        else if(opponent instanceof Hit){
+            String s[] = ((Hit) opponent).defenseAttack();
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            userHp.setText(x-y + "");
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        KidBuu
+         */
+        else if(opponent instanceof KidBuu){
+            String s[] = ((KidBuu) opponent).defenseAttack();
+            int w = Integer.parseInt(opponentHp.getText().toString());//user health
+            int x = Integer.parseInt(userHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            int z = Integer.parseInt(s[2]);//health regen
+            userHp.setText(x-y + "");
+            opponentHp.setText((w+z +""));
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Krillin
+         */
+        else if(opponent instanceof Krillin){
+            String s[] = ((Krillin) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        MasterRoshi
+         */
+        else if(opponent instanceof MasterRoshi){
+            String s[] = ((MasterRoshi) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Monaka
+         */
+        else if(opponent instanceof Monaka){
+            String s[] = ((Monaka) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Piccolo
+         */
+        else if(opponent instanceof Piccolo){
+            String s[] = ((Piccolo) opponent).defenseAttack();
+            int w = Integer.parseInt(opponentHp.getText().toString());//user health
+            int z = Integer.parseInt(s[1]);//health regen
+            opponentHp.setText((w+z +""));
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Tien
+         */
+        else if(opponent instanceof Tien){
+            String s[] = ((Tien) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Trunks
+         */
+        else if(opponent instanceof Trunks){
+            String s[] = ((Trunks) opponent).defenseAttack();
+            int x = Integer.parseInt(userHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            userHp.setText(x-y + "");
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Vegeta
+         */
+        else if(opponent instanceof Vegeta){
+            String s[] = ((Vegeta) opponent).defenseAttack();
+            int x = Integer.parseInt(userHp.getText().toString()); //opp health
+            int y = Integer.parseInt(s[1]);//attack dmg
+            userHp.setText(x-y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Yamcha
+         */
+        else if(opponent instanceof Yamcha){
+            String s[] = ((Yamcha) opponent).defenseAttack();
+            userDmgMulti = 0;
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+
         oppDef--;
         setButtonTexts();
         changeTurn();
@@ -706,17 +1118,175 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppSpecial(View v){
+        /*
+        Goku
+         */
         if(opponent instanceof Goku) {
             String s[] = ((Goku) opponent).specialAttack();
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
             oppDmgMulti = 2;
         }
+        /*
+        Gohan
+         */
         else if(opponent instanceof Gohan){
             String s[] = ((Gohan) opponent).specialAttack();
             userDmgMulti = 0;
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
             userHp.setText(x-y + "");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+                /*
+        Beerus
+         */
+        else if(opponent instanceof Beerus){
+            String s[] = ((Beerus) opponent).specialAttack();
+            userDmgMulti = 0;
+            if(oppDmgMulti !=0){
+                int x = Integer.parseInt(userHp.getText().toString());
+                int y = Integer.parseInt(s[1]);
+                userHp.setText(x/y + "");
+            }
+
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Cell
+         */
+        else if(opponent instanceof Cell){
+            String s[] = ((Cell) user).specialAttack();
+            int w = Integer.parseInt(opponentHp.getText().toString());//cell hp
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//2
+            int z = Integer.parseInt(s[2]);//opp loses 150
+            opponentHp.setText(w/y+"");
+            userHp.setText(x-z +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Frieza
+         */
+        else if(opponent instanceof Frieza){
+            String s[] = ((Frieza) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            userHp.setText( x-y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Hit
+         */
+        else if(opponent instanceof Hit){
+            String s[] = ((Hit) opponent).specialAttack();
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        KidBuu
+         */
+        else if(opponent instanceof KidBuu){
+            String s[] = ((KidBuu) user).specialAttack();
+            int y = Integer.parseInt(s[1]);
+            userHp.setText( y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Krillin
+         */
+        else if(opponent instanceof Krillin){
+            String s[] = ((Krillin) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());
+            int y = Integer.parseInt(s[1]);
+            userHp.setText( x-y+"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        MasterRoshi
+         */
+        else if(opponent instanceof MasterRoshi){
+            String s[] = ((MasterRoshi) opponent).specialAttack();
+            int w = Integer.parseInt(opponentHp.getText().toString());//roshi hp
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            int z = Integer.parseInt(s[2]);//100
+            opponentHp.setText(w-z +"");
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Monaka
+         */
+        else if(opponent instanceof Monaka){
+            String s[] = ((Monaka) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Monaka
+         */
+        else if(opponent instanceof Monaka){
+            String s[] = ((Monaka) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Piccolo
+         */
+        else if(opponent instanceof Piccolo){
+            String s[] = ((Piccolo) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+         /*
+        Tien
+         */
+        else if(opponent instanceof Tien){
+            String s[] = ((Tien) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//175
+            int a = Integer.parseInt(opponentHp.getText().toString());//tien hp
+            int b = Integer.parseInt(s[2]);//50
+            opponentHp.setText(a-b +"");
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Trunks
+         */
+        else if(opponent instanceof Trunks){
+            String s[] = ((Trunks) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Vegeta
+         */
+        else if(opponent instanceof Vegeta){
+            String s[] = ((Vegeta) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//150
+            int a = Integer.parseInt(opponentHp.getText().toString());//vegeta hp
+            int b = Integer.parseInt(s[2]);//100
+            opponentHp.setText(a-b +"");
+            userHp.setText(x-y +"");
+            Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
+        }
+        /*
+        Yamcha
+         */
+        else if(opponent instanceof Yamcha){
+            String s[] = ((Yamcha) opponent).specialAttack();
+            int x = Integer.parseInt(userHp.getText().toString());//opp hp
+            int y = Integer.parseInt(s[1]);//100
+            userHp.setText(x-y +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         oppSpec--;

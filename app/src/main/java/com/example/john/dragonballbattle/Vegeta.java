@@ -39,9 +39,9 @@ public class Vegeta extends Fighter implements FighterMoves {
     @Override
     public String[] specialAttack() {
         String array[] = new String[2];
-        array[0] = "Opposing Player Looses 200"+"\nVegeta Loses 150 HP";
-        array[1] = "200";
-        array[2] = "150";
+        array[0] = "Opposing Player Looses 150 HP"+"\nVegeta Loses 100 HP";
+        array[1] = "150";
+        array[2] = "100";
         return array;
 
     }
