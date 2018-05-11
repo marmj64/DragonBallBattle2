@@ -109,6 +109,7 @@ public class GuestActivity extends AppCompatActivity {
 
     public void play(View v){
         Intent completeIntent = new Intent( this, BattleActivity.class);
+        completeIntent.putExtra("uName", getIntent().getStringExtra("uName"));
         this.startActivity( completeIntent );
     }
 }

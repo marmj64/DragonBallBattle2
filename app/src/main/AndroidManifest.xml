@@ -20,7 +20,8 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".OpponentSelectionActivity" />
         <activity android:name=".BattleActivity" />
-        <activity android:name=".ResultsActivity" />
+        <activity android:name=".ResultsActivity"
+                  android:configChanges="orientation|screenSize"/>
         <activity android:name=".GuestActivity"></activity>
     </application>
 

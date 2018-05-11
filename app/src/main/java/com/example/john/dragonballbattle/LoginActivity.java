@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         if(db.searchUser(userNameStr,passwordStr)==0) {
             //TODO 4. VALIDATE login credentials in DB.
             Intent completeIntent = new Intent(this, FighterSelectionActivity.class);
+            completeIntent.putExtra("uName", userNameStr);
             //TODO 5 ADD METHODS TO DB TO IMPLEMENT
             this.startActivity(completeIntent);
         }

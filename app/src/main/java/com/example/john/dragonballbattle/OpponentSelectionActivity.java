@@ -16,11 +16,13 @@ public class OpponentSelectionActivity extends AppCompatActivity {
 
     public void playGame(View v){
         Intent completeIntent = new Intent( this, BattleActivity.class);
+        completeIntent.putExtra("uName", getIntent().getStringExtra("uName"));
         this.startActivity( completeIntent );
     }
 
     public void guestSelection(View v){
         Intent completeIntent = new Intent( this, GuestActivity.class);
+        completeIntent.putExtra("uName", getIntent().getStringExtra("uName"));
         this.startActivity( completeIntent );
     }
 }

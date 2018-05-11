@@ -18,5 +18,7 @@
     <string name="opponentSelectionLobbyView">Opponent Lobby</string>
     <string name="opponentSelectionPlay">Play</string>
     <string name="opponentSelectionGuest">Guest</string>
+    <string name="resultViewStats">View All Stats</string>
+    <string name="resultsTitle">Results</string>
 
 </resources>

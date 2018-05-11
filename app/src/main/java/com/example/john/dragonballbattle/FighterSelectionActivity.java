@@ -113,6 +113,7 @@ public class FighterSelectionActivity extends AppCompatActivity {
     public void chooseOpponent(View v){
         Intent completeIntent = new Intent( this, OpponentSelectionActivity.class);
 
+        completeIntent.putExtra("uName", getIntent().getStringExtra("uName"));
         this.startActivity( completeIntent );
     }
 

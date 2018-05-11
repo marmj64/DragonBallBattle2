@@ -1,5 +1,6 @@
 package com.example.john.dragonballbattle;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -820,10 +821,23 @@ public class BattleActivity extends AppCompatActivity {
     }
 
     private void checkWin(){
+
         if(Integer.parseInt(userHp.getText().toString()) <= 0){
-            Toast.makeText(this, "Guest wins", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Guest wins", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, ResultsActivity.class);
+            i.putExtra("charName", user.getName());
+            i.putExtra("uName", getIntent().getStringExtra("uName"));
+            i.putExtra("result", "You Lose!");
+            String test = getIntent().getStringExtra("uName");
+            this.startActivity(i);
         } else if(Integer.parseInt(opponentHp.getText().toString()) <= 0){
-            Toast.makeText(this, "User wins", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "User wins", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, ResultsActivity.class);
+            i.putExtra("charName", user.getName());
+            i.putExtra("uName", getIntent().getStringExtra("uName"));
+            i.putExtra("result", "You Win!");
+            String test = getIntent().getStringExtra("uName");
+            this.startActivity(i);
         }
     }
 }
