@@ -419,9 +419,9 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Hit) user).defenseAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            opponentHp.setText(x-y + "");
-            userHp.setText(x-(y*oppDmgMulti) + "");
-            userDmgMulti = 0;
+            opponentHp.setText(x-(y*userDmgMulti) + "");
+            //userHp.setText(x-(y*oppDmgMulti) + "");
+            oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -433,7 +433,7 @@ public class BattleActivity extends AppCompatActivity {
             int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
             int z = Integer.parseInt(s[2]);//health regen
-            opponentHp.setText(x-y + "");
+            opponentHp.setText(x-(y*userDmgMulti)  + "");
             userHp.setText((w+z +""));
             oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
@@ -488,7 +488,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Trunks) user).defenseAttack();
             int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
-            opponentHp.setText(x-y + "");
+            opponentHp.setText(x-(y*userDmgMulti) + "");
             oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
@@ -499,7 +499,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Vegeta) user).defenseAttack();
             int x = Integer.parseInt(opponentHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
-            opponentHp.setText(x-y + "");
+            opponentHp.setText(x-(y*userDmgMulti) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -537,7 +537,7 @@ public class BattleActivity extends AppCompatActivity {
             oppDmgMulti = 0;
             int x = Integer.parseInt(opponentHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            opponentHp.setText(x-y + "");
+            opponentHp.setText(x-(y * userDmgMulti) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -557,14 +557,14 @@ public class BattleActivity extends AppCompatActivity {
         /*
         Cell
          */
-        else if(user instanceof Cell){
+        else if(user instanceof Cell) {
             String s[] = ((Cell) user).specialAttack();
             int w = Integer.parseInt(userHp.getText().toString());//cell hp
             int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//cell loses half hp
             int z = Integer.parseInt(s[2]);//opp loses 150
-            userHp.setText(w/y +"");
-            opponentHp.setText((x-z) +"");
+            userHp.setText(w / y + "");
+            opponentHp.setText((x - (z * userDmgMulti)) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -574,7 +574,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Frieza) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            opponentHp.setText( x-y+"");
+            opponentHp.setText(x - (y*userDmgMulti) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -600,7 +600,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Krillin) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            opponentHp.setText( x-y+"");
+            opponentHp.setText( x-(y*userDmgMulti)+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -613,7 +613,7 @@ public class BattleActivity extends AppCompatActivity {
             int y = Integer.parseInt(s[1]);//150
             int z = Integer.parseInt(s[2]);//100
             userHp.setText(w-z +"");
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -623,7 +623,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Monaka) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//100
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -643,7 +643,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Piccolo) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//150
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -656,7 +656,7 @@ public class BattleActivity extends AppCompatActivity {
             int a = Integer.parseInt(userHp.getText().toString());//tien hp
             int b = Integer.parseInt(s[2]);//50
             userHp.setText(a-b +"");
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -666,7 +666,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Trunks) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//150
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -679,7 +679,7 @@ public class BattleActivity extends AppCompatActivity {
             int a = Integer.parseInt(userHp.getText().toString());//vegeta hp
             int b = Integer.parseInt(s[2]);//100
             userHp.setText(a-b +"");
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -689,7 +689,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Yamcha) user).specialAttack();
             int x = Integer.parseInt(opponentHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//100
-            opponentHp.setText(x-y +"");
+            opponentHp.setText(x-(y*userDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
 
@@ -1031,7 +1031,7 @@ public class BattleActivity extends AppCompatActivity {
             int x = Integer.parseInt(userHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
             int z = Integer.parseInt(s[2]);//health regen
-            userHp.setText(x-y + "");
+            userHp.setText(x-(y*oppDmgMulti) + "");
             opponentHp.setText((w+z +""));
             userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
@@ -1086,7 +1086,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Trunks) opponent).defenseAttack();
             int x = Integer.parseInt(userHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
-            userHp.setText(x-y + "");
+            userHp.setText(x-(y*oppDmgMulti) + "");
             userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
@@ -1097,7 +1097,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Vegeta) opponent).defenseAttack();
             int x = Integer.parseInt(userHp.getText().toString()); //opp health
             int y = Integer.parseInt(s[1]);//attack dmg
-            userHp.setText(x-y + "");
+            userHp.setText(x-(y*oppDmgMulti) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -1135,7 +1135,7 @@ public class BattleActivity extends AppCompatActivity {
             userDmgMulti = 0;
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            userHp.setText(x-y + "");
+            userHp.setText(x-(y * oppDmgMulti) + "");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
                 /*
@@ -1155,14 +1155,14 @@ public class BattleActivity extends AppCompatActivity {
         /*
         Cell
          */
-        else if(opponent instanceof Cell){
+        else if(opponent instanceof Cell) {
             String s[] = ((Cell) user).specialAttack();
             int w = Integer.parseInt(opponentHp.getText().toString());//cell hp
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//2
             int z = Integer.parseInt(s[2]);//opp loses 150
-            opponentHp.setText(w/y+"");
-            userHp.setText(x-z +"");
+            opponentHp.setText(w / y + "");
+            userHp.setText(x-(z * oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -1172,7 +1172,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Frieza) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            userHp.setText( x-y+"");
+            userHp.setText( x-(y*oppDmgMulti)+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1198,7 +1198,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Krillin) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            userHp.setText( x-y+"");
+            userHp.setText( x-(y*oppDmgMulti)+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1211,7 +1211,7 @@ public class BattleActivity extends AppCompatActivity {
             int y = Integer.parseInt(s[1]);//150
             int z = Integer.parseInt(s[2]);//100
             opponentHp.setText(w-z +"");
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1221,7 +1221,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Monaka) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//100
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1231,7 +1231,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Monaka) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//100
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1241,7 +1241,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Piccolo) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//150
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -1254,7 +1254,7 @@ public class BattleActivity extends AppCompatActivity {
             int a = Integer.parseInt(opponentHp.getText().toString());//tien hp
             int b = Integer.parseInt(s[2]);//50
             opponentHp.setText(a-b +"");
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1264,7 +1264,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Trunks) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//150
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1277,7 +1277,7 @@ public class BattleActivity extends AppCompatActivity {
             int a = Integer.parseInt(opponentHp.getText().toString());//vegeta hp
             int b = Integer.parseInt(s[2]);//100
             opponentHp.setText(a-b +"");
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1287,7 +1287,7 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Yamcha) opponent).specialAttack();
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//100
-            userHp.setText(x-y +"");
+            userHp.setText(x-(y*oppDmgMulti) +"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         oppSpec--;
