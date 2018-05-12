@@ -9,7 +9,7 @@ public class Yamcha extends Fighter implements FighterMoves {
 
     public Yamcha(){
         //TEST
-        super("Yamcha", 200, "Kamehameha", "Wolf Fang Fist", "Afterimage Technique", "Spirit Ball",R.drawable.yamcha);
+        super("Yamcha", 300, "Kamehameha", "Wolf Fang Fist", "Afterimage Technique", "Spirit Ball",R.drawable.yamcha);
     }
 
     // @Override

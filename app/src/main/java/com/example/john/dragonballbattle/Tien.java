@@ -37,7 +37,7 @@ public class Tien extends Fighter implements FighterMoves {
 
     @Override
     public String[] specialAttack() {
-        String array[] = new String[2];
+        String array[] = new String[3];
         array[0] = "Opponent Loses 175 HP"+"\n"+"Tien Loses 50 HP";
         array[1] = "175";
         array[2] = "50";

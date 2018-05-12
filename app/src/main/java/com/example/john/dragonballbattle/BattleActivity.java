@@ -420,7 +420,8 @@ public class BattleActivity extends AppCompatActivity {
             int x = Integer.parseInt(opponentHp.getText().toString());
             int y = Integer.parseInt(s[1]);
             opponentHp.setText(x-y + "");
-            oppDmgMulti = 0;
+            userHp.setText(x-(y*oppDmgMulti) + "");
+            userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -469,7 +470,7 @@ public class BattleActivity extends AppCompatActivity {
             int w = Integer.parseInt(userHp.getText().toString());//user health
             int z = Integer.parseInt(s[1]);//health regen
             userHp.setText((w+z +""));
-            oppDmgMulti = 0;
+            //oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -589,7 +590,7 @@ public class BattleActivity extends AppCompatActivity {
         else if(user instanceof KidBuu){
             String s[] = ((KidBuu) user).specialAttack();
             int y = Integer.parseInt(s[1]);
-            opponentHp.setText( y+"");
+            userHp.setText( y+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -988,7 +989,6 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Beerus) opponent).defenseAttack();
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-
             userHp.setText(x-(y*oppDmgMulti) + "");
             userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
@@ -1017,8 +1017,9 @@ public class BattleActivity extends AppCompatActivity {
             String s[] = ((Hit) opponent).defenseAttack();
             int x = Integer.parseInt(userHp.getText().toString());
             int y = Integer.parseInt(s[1]);
-            userHp.setText(x-y + "");
-            userDmgMulti = 0;
+            //userHp.setText(x-y + "");
+            userHp.setText(x-(y*userDmgMulti) + "");
+            oppDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
@@ -1067,7 +1068,7 @@ public class BattleActivity extends AppCompatActivity {
             int w = Integer.parseInt(opponentHp.getText().toString());//user health
             int z = Integer.parseInt(s[1]);//health regen
             opponentHp.setText((w+z +""));
-            userDmgMulti = 0;
+           // userDmgMulti = 0;
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
          /*
@@ -1187,7 +1188,7 @@ public class BattleActivity extends AppCompatActivity {
         else if(opponent instanceof KidBuu){
             String s[] = ((KidBuu) user).specialAttack();
             int y = Integer.parseInt(s[1]);
-            userHp.setText( y+"");
+            opponentHp.setText( y+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
         }
         /*
