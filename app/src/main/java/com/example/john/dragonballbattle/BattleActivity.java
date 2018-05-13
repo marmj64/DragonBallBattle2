@@ -1186,7 +1186,7 @@ public class BattleActivity extends AppCompatActivity {
         KidBuu
          */
         else if(opponent instanceof KidBuu){
-            String s[] = ((KidBuu) user).specialAttack();
+            String s[] = ((KidBuu) opponent).specialAttack();
             int y = Integer.parseInt(s[1]);
             opponentHp.setText( y+"");
             Toast.makeText(this, s[0], Toast.LENGTH_SHORT).show();
