@@ -1156,7 +1156,7 @@ public class BattleActivity extends AppCompatActivity {
         Cell
          */
         else if(opponent instanceof Cell) {
-            String s[] = ((Cell) user).specialAttack();
+            String s[] = ((Cell) opponent).specialAttack();
             int w = Integer.parseInt(opponentHp.getText().toString());//cell hp
             int x = Integer.parseInt(userHp.getText().toString());//opp hp
             int y = Integer.parseInt(s[1]);//2
