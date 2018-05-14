@@ -57,6 +57,10 @@ public class BattleActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Initializes the start screen to have player1 go first.
+     */
+
     public void updateStartScreen(){
         user = FighterSelectionActivity.selectedFighter;
         userFighterView.setText(user.getName());
@@ -77,6 +81,9 @@ public class BattleActivity extends AppCompatActivity {
         setButtonTexts();
     }
 
+    /**
+     * Sets the text in the button. Updates the number of remaining moves.
+     */
     private void setButtonTexts(){
         opponentNormalBtn.setText(opponent.getNormal());
         opponentStrongBtn.setText(opponent.getStrong() + "-" + oppStrong);
@@ -1296,53 +1303,10 @@ public class BattleActivity extends AppCompatActivity {
 
     }
 
-//    private void changeTurnNoNormalUser(){
-//        if(turnCounter % 2 == 0){
-//            //currently user's turn
-//            userNormalBtn.setEnabled(false);
-//            userSpecialBtn.setEnabled(false);
-//            userStrongBtn.setEnabled(false);
-//            userDefenseBtn.setEnabled(false);
-//            opponentNormalBtn.setEnabled(false);
-//            opponentStrongBtn.setEnabled(true);
-//            opponentSpecialBtn.setEnabled(true);
-//            opponentDefenseBtn.setEnabled(true);
-//        } else {
-//            opponentNormalBtn.setEnabled(false);
-//            opponentStrongBtn.setEnabled(false);
-//            opponentSpecialBtn.setEnabled(false);
-//            opponentDefenseBtn.setEnabled(false);
-//            userNormalBtn.setEnabled(true);
-//            userSpecialBtn.setEnabled(true);
-//            userStrongBtn.setEnabled(true);
-//            userDefenseBtn.setEnabled(true);
-//        }
-//        turnCounter++;
-//    }
-//    private void changeTurnNoNormalOpp(){
-//        if(turnCounter % 2 == 0){
-//            //currently user's turn
-//            userNormalBtn.setEnabled(false);
-//            userSpecialBtn.setEnabled(false);
-//            userStrongBtn.setEnabled(false);
-//            userDefenseBtn.setEnabled(false);
-//            opponentNormalBtn.setEnabled(true);
-//            opponentStrongBtn.setEnabled(true);
-//            opponentSpecialBtn.setEnabled(true);
-//            opponentDefenseBtn.setEnabled(true);
-//        } else {
-//            opponentNormalBtn.setEnabled(false);
-//            opponentStrongBtn.setEnabled(false);
-//            opponentSpecialBtn.setEnabled(false);
-//            opponentDefenseBtn.setEnabled(false);
-//            userNormalBtn.setEnabled(false);
-//            userSpecialBtn.setEnabled(true);
-//            userStrongBtn.setEnabled(true);
-//            userDefenseBtn.setEnabled(true);
-//        }
-//        turnCounter++;
-//    }
 
+    /**
+     * Resets the buttons for when the turns are swapped in two player mode.
+     */
     private void changeTurn(){
         if(turnCounter % 2 == 0){
             //currently user's turn
@@ -1367,7 +1331,10 @@ public class BattleActivity extends AppCompatActivity {
 
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+        /**
+         * Disables the move if they run out of turns. There is only 5 moves for strong,
+         * 3 for defense, and 1 for special.
+         */
         if(oppStrong < 1){
             opponentStrongBtn.setEnabled(false);
         }
@@ -1388,9 +1355,12 @@ public class BattleActivity extends AppCompatActivity {
             userSpecialBtn.setEnabled(false);
         }
         checkWin();
-        turnCounter++;
+        turnCounter++;  //change turn
     }
 
+    /**
+     * Will check if there is a win and proceeds to the victory results view if there is a win.
+     */
     private void checkWin(){
 
         if(Integer.parseInt(userHp.getText().toString()) <= 0){

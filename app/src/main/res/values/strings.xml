@@ -16,8 +16,8 @@
     <string name="fighterSelectionTitle">Fighter Selection</string>
     <string name="opponentSelectionTitle">Opponent Selection</string>
     <string name="opponentSelectionLobbyView">Opponent Lobby</string>
-    <string name="opponentSelectionPlay">Play</string>
-    <string name="opponentSelectionGuest">Guest</string>
+    <string name="opponentSelectionPlay">Play On Network</string>
+    <string name="opponentSelectionGuest">Play With Guest</string>
     <string name="resultViewStats">View All Stats</string>
     <string name="resultsTitle">Results</string>
 

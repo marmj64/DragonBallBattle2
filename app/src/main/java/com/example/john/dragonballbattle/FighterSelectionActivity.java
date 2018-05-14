@@ -26,6 +26,10 @@ public class FighterSelectionActivity extends AppCompatActivity {
         populateSpinner();
     }
 
+    /**
+     * Stores all of the fighters in one array.
+     * @return all the fighters.
+     */
     private Fighter[] loadFighters(){
         Fighter[] fighters = new Fighter[15];
 
@@ -48,6 +52,10 @@ public class FighterSelectionActivity extends AppCompatActivity {
         return fighters;
     }
 
+    /**
+     * Stores the images of the fighters from the drawable resource.
+     * @return All images of the fighters.
+     */
     private int[] loadFighterImages(){
         int[] fighterImages = new int[15];
         fighterImages[0] = R.drawable.goku;
@@ -68,6 +76,10 @@ public class FighterSelectionActivity extends AppCompatActivity {
         return fighterImages;
     }
 
+    /**
+     * A list of all the names of the sub classes of the fighter class.
+     * @return List of fighter names
+     */
 
     private String[] getFighterNames(){
         String[] names = new String[15];
@@ -79,6 +91,10 @@ public class FighterSelectionActivity extends AppCompatActivity {
         return names;
     }
 
+    /**
+     * Dynamically fills the spinner with all of the characters and then will fill up
+     * the text box with that characters moves. Sets the image of that fighter as well.
+     */
     private void populateSpinner(){
         //Fighter selectedFigher = new Fighter();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
