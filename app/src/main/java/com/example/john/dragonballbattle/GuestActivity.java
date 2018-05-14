@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+/**
+ * This class is a replica of the FighterSelectionActivity class. This activity is for the Guest to select their
+ * fighter.
+ */
 public class GuestActivity extends AppCompatActivity {
     private Spinner charSpinner;
     private TextView moveList;

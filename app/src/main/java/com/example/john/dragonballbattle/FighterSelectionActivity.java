@@ -126,6 +126,10 @@ public class FighterSelectionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Upon selecting the opponent, the next activity will launch.
+     * @param v
+     */
     public void chooseOpponent(View v){
         Intent completeIntent = new Intent( this, OpponentSelectionActivity.class);
 
