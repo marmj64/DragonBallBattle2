@@ -50,14 +50,14 @@ public class ResultsActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.resultTitle)).setPadding(0, 0, 0, convertToDP(50));
         ((TextView) findViewById(R.id.resultPlayerName)).setPadding(0, 0, 0, convertToDP(30));
         ((TextView) findViewById(R.id.resultCharacter)).setPadding(0, 0, 0, convertToDP(30));
-        ((TextView) findViewById(R.id.resultWinLose)).setPadding(0, 0, 0, convertToDP(50));
+        ((TextView) findViewById(R.id.resultWinLose)).setPadding(0, 0, 0, convertToDP(30));
     }
 
     private void setupVert(){
         ((TextView) findViewById(R.id.resultTitle)).setPadding(0, 0, 0, convertToDP(120));
         ((TextView) findViewById(R.id.resultPlayerName)).setPadding(0, 0, 0, convertToDP(80));
         ((TextView) findViewById(R.id.resultCharacter)).setPadding(0, 0, 0, convertToDP(80));
-        ((TextView) findViewById(R.id.resultWinLose)).setPadding(0, 0, 0, convertToDP(120));
+        ((TextView) findViewById(R.id.resultWinLose)).setPadding(0, 0, 0, convertToDP(80));
     }
 
     private int convertToDP(int padding){
