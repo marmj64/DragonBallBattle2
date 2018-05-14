@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AlertDialog;
 
+import java.util.ArrayList;
+
 /**
  * Created by John on 4/24/2018.
  */
@@ -14,7 +16,7 @@ import android.support.v7.app.AlertDialog;
 public class DatabaseManager extends SQLiteOpenHelper{
 
     private static final String DB_NAME = "dragonballbattle";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String T_USER_INFO = "userInfo";
     private static final String T_RESULTS = "gameResults";
     private static final String UNAME = "username";
@@ -31,7 +33,7 @@ public class DatabaseManager extends SQLiteOpenHelper{
         db.execSQL(sqlCreateUserTable);
         //TODO 1. Need to ensure that the username in the results table is the username from the user info. Do we need to make this a foreign key?
         //TODO 2. The results table may need additional columns?
-        String sqlCreateResultsTable = "create table " + T_RESULTS + "( " + UNAME +" text primary key UNIQUE, "+ FIGHTER + " text, "+ RESULT + " text )" ;
+        String sqlCreateResultsTable = "create table " + T_RESULTS + "( results_id integer primary key autoincrement," + UNAME +" text, "+ FIGHTER + " text, "+ RESULT + " text )" ;
         db.execSQL(sqlCreateResultsTable);
     }
 
@@ -50,9 +52,10 @@ public class DatabaseManager extends SQLiteOpenHelper{
     }
 
     //TODO 3. What needs to be passed in to insert a result.
-    public void insertResult(User user, Fighter fighter){
+    public void insertResult(String uName, String fighter, String result){//(User user, Fighter fighter){
         SQLiteDatabase db = this.getWritableDatabase();
-        String sqlInsert = "insert into " + T_RESULTS + " values('" + user.getUsername() + "', '" + fighter.getName() + "', '" + user.getResult() + "' )";
+        //String sqlInsert = "insert into " + T_RESULTS + " values('" + user.getUsername() + "', '" + fighter.getName() + "', '" + user.getResult() + "' )";
+        String sqlInsert = "insert into " + T_RESULTS + " values(null, '" + uName + "', '" + fighter + "', '" + result + "' )";
         db.execSQL(sqlInsert);
         db.close();
     }
@@ -73,5 +76,18 @@ public class DatabaseManager extends SQLiteOpenHelper{
         return 2; //passoword is wrong
     }
 
-
+    public ArrayList<String> getAllResutls(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sqlSearch = "select * from " +T_RESULTS + ";";
+        Cursor cursor = db.rawQuery( sqlSearch, null );
+        ArrayList<String> results = new ArrayList<>();
+        while (cursor.moveToNext()){
+            results.add("Name: " + cursor.getString(1) + " Fighter: " + cursor.getString(2) + " Result: " + cursor.getString(3));
+        }
+        if(results != null) {
+            return results;
+        } else {
+            return null;
+        }
+    }
 }

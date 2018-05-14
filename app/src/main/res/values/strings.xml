@@ -20,5 +20,6 @@
     <string name="opponentSelectionGuest">Play With Guest</string>
     <string name="resultViewStats">View All Stats</string>
     <string name="resultsTitle">Results</string>
+    <string name="goToMain">Main Menu</string>
 
 </resources>

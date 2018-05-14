@@ -1,6 +1,7 @@
 package com.example.john.dragonballbattle;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -108,6 +109,9 @@ public class BattleActivity extends AppCompatActivity {
     Goku.
      */
     public void userNormal(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.slap);
+        mediaPlayer.start();
+
         if(userDmgMulti ==0){
             Toast.makeText(this, "Your Attack Missed.", Toast.LENGTH_SHORT).show();
         }
@@ -238,6 +242,9 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void userStrong(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.fireball);
+        mediaPlayer.start();
+
         if(userDmgMulti ==0){
             Toast.makeText(this, "Your Attack Missed.", Toast.LENGTH_LONG).show();
         }
@@ -375,6 +382,8 @@ public class BattleActivity extends AppCompatActivity {
     Goku
      */
     public void userDefense(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.throwknife2);
+        mediaPlayer.start();
         /*
         Goku
          */
@@ -531,6 +540,9 @@ public class BattleActivity extends AppCompatActivity {
     Goku
      */
     public void userSpecial(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.explosion);
+        mediaPlayer.start();
+
         if(user instanceof Goku) {
             String s[] = ((Goku) user).specialAttack();
             userDmgMulti = 2;
@@ -710,6 +722,8 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppNormal(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.slap);
+        mediaPlayer.start();
         if(oppDmgMulti ==0){
             Toast.makeText(this, "Your Attack Missed.", Toast.LENGTH_SHORT).show();
         }
@@ -843,6 +857,8 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppStrong(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.fireball);
+        mediaPlayer.start();
         if(oppDmgMulti ==0){
             Toast.makeText(this, "Your Attack Missed.", Toast.LENGTH_SHORT).show();
         }
@@ -973,6 +989,8 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppDefense(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.throwknife2);
+        mediaPlayer.start();
         /*
         Goku
          */
@@ -1126,6 +1144,8 @@ public class BattleActivity extends AppCompatActivity {
      * @param v
      */
     public void oppSpecial(View v){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.explosion);
+        mediaPlayer.start();
         /*
         Goku
          */
@@ -1362,14 +1382,17 @@ public class BattleActivity extends AppCompatActivity {
      * Will check if there is a win and proceeds to the victory results view if there is a win.
      */
     private void checkWin(){
-
+        DatabaseManager dbManager = new DatabaseManager(getApplicationContext());
         if(Integer.parseInt(userHp.getText().toString()) <= 0){
             Toast.makeText(this, "Guest wins", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, ResultsActivity.class);
             i.putExtra("charName", user.getName());
             i.putExtra("uName", getIntent().getStringExtra("uName"));
             i.putExtra("result", "You Lose!");
+            dbManager.insertResult(getIntent().getStringExtra("uName"), user.getName(), "Loss");
             String test = getIntent().getStringExtra("uName");
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.burp_scream);
+            mediaPlayer.start();
             this.startActivity(i);
         } else if(Integer.parseInt(opponentHp.getText().toString()) <= 0){
             Toast.makeText(this, "User wins", Toast.LENGTH_SHORT).show();
@@ -1377,7 +1400,10 @@ public class BattleActivity extends AppCompatActivity {
             i.putExtra("charName", user.getName());
             i.putExtra("uName", getIntent().getStringExtra("uName"));
             i.putExtra("result", "You Win!");
+            dbManager.insertResult(getIntent().getStringExtra("uName"), user.getName(), "Victory");
             String test = getIntent().getStringExtra("uName");
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.applause2);
+            mediaPlayer.start();
             this.startActivity(i);
         }
     }

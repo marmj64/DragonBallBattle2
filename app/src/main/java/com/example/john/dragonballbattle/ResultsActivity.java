@@ -1,12 +1,26 @@
 package com.example.john.dragonballbattle;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ResultsActivity extends AppCompatActivity {
     @Override
@@ -48,5 +62,43 @@ public class ResultsActivity extends AppCompatActivity {
 
     private int convertToDP(int padding){
         return (int) (padding * getResources().getDisplayMetrics().density + 0.5f);
+    }
+
+    public void viewStats(View v){
+        DatabaseManager dbManager = new DatabaseManager(getApplicationContext());
+        ArrayList<String> results = dbManager.getAllResutls();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Results");
+        LinearLayout linearLayout = new LinearLayout(this);
+        ScrollView scrollView = new ScrollView(this);
+        LinearLayout innerLinearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.addView(scrollView);
+        scrollView.addView(innerLinearLayout);
+        innerLinearLayout.setOrientation(LinearLayout.VERTICAL);
+        TextView t;
+        for(String s : results){
+            t = new TextView(this);
+            t.setText(s);
+            t.setTextColor(Color.WHITE);
+            t.setBackgroundColor(Color.GRAY);
+            String gg = s;
+            innerLinearLayout.addView(t);
+        }
+        builder.setNeutralButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setView(linearLayout);
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    public void goToMain(View v){
+        Intent i=new Intent(this, FighterSelectionActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
     }
 }
