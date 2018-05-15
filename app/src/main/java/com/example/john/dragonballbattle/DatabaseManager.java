@@ -76,9 +76,9 @@ public class DatabaseManager extends SQLiteOpenHelper{
         return 2; //passoword is wrong
     }
 
-    public ArrayList<String> getAllResutls(){
+    public ArrayList<String> getAllResutls(String uName){
         SQLiteDatabase db = this.getWritableDatabase();
-        String sqlSearch = "select * from " +T_RESULTS + ";";
+        String sqlSearch = "select * from " + T_RESULTS + " WHERE " + UNAME + " = '" + uName + "';";
         Cursor cursor = db.rawQuery( sqlSearch, null );
         ArrayList<String> results = new ArrayList<>();
         while (cursor.moveToNext()){

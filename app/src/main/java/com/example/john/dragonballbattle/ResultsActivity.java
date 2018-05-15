@@ -66,7 +66,7 @@ public class ResultsActivity extends AppCompatActivity {
 
     public void viewStats(View v){
         DatabaseManager dbManager = new DatabaseManager(getApplicationContext());
-        ArrayList<String> results = dbManager.getAllResutls();
+        ArrayList<String> results = dbManager.getAllResutls(((TextView) findViewById(R.id.resultPlayerName)).getText().toString());
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Results");
         LinearLayout linearLayout = new LinearLayout(this);
